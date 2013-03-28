@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+
+
+<div class="definicion">
+  <div class="sanar">
+    <h2>Sanar</h2>
+    <div  class="text"><%= @definicion[@random[0]].sanar %></div>
+  </div>
+  <div class="con">
+    Con
+  </div>
+
+  <div class="tinta">
+    <h2>Tinta</h2>
+    <div class="text"><%= @definicion[@random[1]].tinta %></div>
+  </div>
+</div>
+
+<div class="nombres">
+  <table>
+    <tr>
+      <th><label>Nombre</label></th>
+      <td><%= @definicion[@random[0]].name %></th>
+      <th>Apellido</td>
+      <td><%= @definicion[@random[1]].surname %></td>
+    </tr>
+  </table>
+</div>
+
+
+
+
+
+
+
+
+

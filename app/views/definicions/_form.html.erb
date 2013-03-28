@@ -1,0 +1,33 @@
+<%= form_for(@definicion) do |f| %>
+  <% if @definicion.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@definicion.errors.count, "error") %> prohibited this definicion from being saved:</h2>
+
+      <ul>
+      <% @definicion.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name, "Nombre" %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :surname, "Apellido" %><br />
+    <%= f.text_field :surname %>
+  </div>
+  <div class="field">
+    <%= f.label :sanar %><br />
+    <%= f.text_area :sanar %>
+  </div>
+  <div class="field">
+    <%= f.label :tinta %><br />
+    <%= f.text_area :tinta %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

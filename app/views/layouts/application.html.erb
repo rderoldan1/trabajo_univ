@@ -8,7 +8,12 @@
 </head>
 <body>
 
-<%= yield %>
+<div class="contenido">
+  <%= link_to "Inicio", definicion_path(1)%>|
+  <%= link_to "Listado", root_path%>
+  <%= yield %>
+</div>
+
 
 </body>
 </html>

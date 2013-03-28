@@ -1,0 +1,29 @@
+<h1>Listado de definiciones</h1>
+
+<table>
+  <tr>
+    <th>Nombre</th>
+    <th>apellido</th>
+    <th>Sanar</th>
+    <th>Tinta</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @definicions.each do |definicion| %>
+  <tr>
+    <td><%= definicion.name %></td>
+    <td><%= definicion.surname %></td>
+    <td><%= definicion.sanar %></td>
+    <td><%= definicion.tinta %></td>
+    <td><% link_to 'Ver', definicion %></td>
+    <td><%= link_to 'Editar', edit_definicion_path(definicion) %></td>
+    <td><%= link_to 'Eliminar', definicion, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'Nueva Definicion', new_definicion_path %>
