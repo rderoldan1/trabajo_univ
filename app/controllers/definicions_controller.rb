@@ -45,9 +45,10 @@ class DefinicionsController < ApplicationController
 
     respond_to do |format|
       if @definicion.save
-        format.html { redirect_to @definicion, notice: 'Definicion was successfully created.' }
+        format.html { redirect_to @definicion, notice: 'Definicion fue reada exitosamente.' }
         format.json { render json: @definicion, status: :created, location: @definicion }
       else
+        flash[:alert] = "Revise los datos"
         format.html { render action: "new" }
         format.json { render json: @definicion.errors, status: :unprocessable_entity }
       end
@@ -61,7 +62,7 @@ class DefinicionsController < ApplicationController
 
     respond_to do |format|
       if @definicion.update_attributes(params[:definicion])
-        format.html { redirect_to @definicion, notice: 'Definicion was successfully updated.' }
+        format.html { redirect_to @definicion, notice: 'Definicion fue actualizada exitosamente.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }

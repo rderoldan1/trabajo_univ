@@ -10,8 +10,15 @@
 
 <div class="contenido">
   <%= link_to "Inicio", definicion_path(1)%>|
-  <%= link_to "Listado", root_path%>
-  <%= yield %>
+  <%= link_to "Listado", root_path%>|          Santiago Acosta
+
+
+    <% flash.each do |key, value| %>
+        <div class="flash <%= key %>"><%= value.capitalize %></div>
+    <%  end %>
+
+
+    <%= yield %>
 </div>
 
 
