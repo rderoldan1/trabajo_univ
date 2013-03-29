@@ -16,10 +16,11 @@
 <div class="nombres">
   <table>
     <tr>
-      <th><label>Nombre</label></th>
-      <td><%= @definicion[@random[0]].name %></th>
-      <th>Apellido</td>
-      <td><%= @definicion[@random[1]].surname %></td>
+      <th><%= @definicion[@random[0]].name.titleize %></th>
+      <th><%= @definicion[@random[1]].surname.titleize %></th>
+    </tr>
+    <tr>
+      <td colspan="2"><%= link_to "Aportar Definicion", new_definicion_path %></td>
     </tr>
   </table>
 </div>
