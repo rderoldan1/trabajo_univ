@@ -1,4 +1,5 @@
 class DefinicionsController < ApplicationController
+  before_filter :authenticate, :only => [:index]
   # GET /definicions
   # GET /definicions.json
   def index
@@ -80,6 +81,15 @@ class DefinicionsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to definicions_url }
       format.json { head :no_content }
+    end
+  end
+
+
+  protected
+
+  def authenticate
+    authenticate_or_request_with_http_basic do |username, password|
+      username == "admin" && password == "123456"
     end
   end
 end
